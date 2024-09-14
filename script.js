@@ -4,28 +4,26 @@ const popupCloseBtn = alumniTestimonialPopup.querySelector(".popup-close-btn");
 const popupCloseIcon = alumniTestimonialPopup.querySelector(".popup-close-icon");
 const alumniTestimonialRow = document.querySelector(".alumni-testimonial-row");
 
+alumniDataFetchXlsx();
+scrollerButtons();
+alumniReadmorePopupDetails();
 
 function alumniDataFetchXlsx(){
-    // Fetch the XLSX file from a server or local directory
-    fetch('excelsheet/alumniTestimonialData.xlsx')  // Provide the correct path to your xlsx file
+    fetch('excelsheet/alumniTestimonialData.xlsx') 
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.arrayBuffer();  // Read the response as an array buffer
+      return response.arrayBuffer();
     })
     .then(data => {
-      // Parse the XLSX data using SheetJS
       const workbook = XLSX.read(new Uint8Array(data), { type: 'array' });
-    //   console.log(workbook);
   
-      // Assuming the first sheet is the one we need
       const firstSheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[firstSheetName];
   
-      // Convert the sheet to JSON
       const jsonData = XLSX.utils.sheet_to_json(worksheet);
-      console.log(jsonData);
+      // console.log(jsonData);
       
       let content = "";
     jsonData.forEach((elem) => {
@@ -33,18 +31,18 @@ function alumniDataFetchXlsx(){
        <div class="item">
           <div class="item-inner">
                <h3>${elem.NAME}</h3>
-               <img src="" alt="${elem.NAME}">
+               <img src="/photo/${elem.PHOTO}" alt="${elem.NAME}">
                <div class="alumni-name">${elem.NAME}</div>
-               <p>Department: ${elem.BRANCH} </p>
-               <p>Company: ${elem.COMPANY}</p>
-               <p>Salary: ${elem.CTC}</p>
+               <p class="detail"><span>Branch: </span> ${elem.BRANCH} </p>
+               <p class="detail"><span>Company: </span> ${elem.COMPANY}</p>
+               <p class="detail"><span>CTC: </span> ${elem.CTC}</p>
                <div class="read-more-cont">
-                <img src="" alt="${elem.NAME}">
+                <img src="/photo/${elem.PHOTO}" alt="${elem.NAME}">
                 <div class="alumni-name">${elem.NAME}</div>
-                <p>Department: ${elem.BRANCH}</p>
-                <p>Company: ${elem.COMPANY}</p>
-                <p>Salary: ${elem.CTC}</p>
-                <p>${elem.DESCRIPTION}</p>
+                <p class="detail"><span>Branch: </span> ${elem.BRANCH}</p>
+                <p class="detail"><span>Company: </span> ${elem.COMPANY}</p>
+                <p class="detail"><span>CTC: </span> ${elem.CTC}</p>
+                <p id="description">${elem.DESCRIPTION}</p>
                 </div>
                 <button class="btn" type="button">Read More</button>
                 </div>
@@ -53,34 +51,46 @@ function alumniDataFetchXlsx(){
     });
     alumniTestimonialRow.innerHTML += content;
   
-      // Append the generated content to the row
     })
     .catch(error => {
       console.error('Error fetching or parsing the file:', error);
     });
 }
 
-function alumniReadmorePopupDetails(){
-  alumniTestimonialItems.addEventListener("click", function (event) {
-    if (event.target.tagName.toLowerCase() == "button") {
-      const item = event.target.parentElement;
-      const h3 = item.querySelector("h3").innerHTML;
-      const readMoreCont = item.querySelector(".read-more-cont").innerHTML;
-      alumniTestimonialPopup.querySelector("h3").innerHTML = h3;
-      alumniTestimonialPopup.querySelector(".popup-body").innerHTML = readMoreCont;
-      popupBox();
-    }
-  });
-  
-  popupCloseIcon.addEventListener("click", popupBox);
-  popupCloseBtn.addEventListener("click", popupBox);
-  
-  alumniTestimonialPopup.addEventListener("click", function (event) {
-    if (event.target == alumniTestimonialPopup) {
-      popupBox();
-    }
-  });
-  
+function alumniReadmorePopupDetails() {
+
+    alumniTestimonialItems.addEventListener("click", function (event) {
+      if (event.target.tagName.toLowerCase() === "button") {
+        const item = event.target.parentElement;
+
+        const h3Element = item.querySelector("h3");
+        const readMoreContElement = item.querySelector(".read-more-cont");
+
+        if (h3Element && readMoreContElement) {
+          const h3 = h3Element.innerHTML;
+          const readMoreCont = readMoreContElement.innerHTML;
+
+          const popupH3 = alumniTestimonialPopup.querySelector("h3");
+          const popupBody = alumniTestimonialPopup.querySelector(".popup-body");
+
+          if (popupH3 && popupBody) {
+            popupH3.innerHTML = h3;
+            popupBody.innerHTML = readMoreCont;
+            popupBox();
+          }
+        }
+      }
+    });
+
+    popupCloseIcon?.addEventListener("click", popupBox);
+    popupCloseBtn?.addEventListener("click", popupBox);
+
+    alumniTestimonialPopup.addEventListener("click", function (event) {
+      if (event.target === alumniTestimonialPopup) {
+        popupBox();
+      }
+    });
+
   function popupBox() {
     alumniTestimonialPopup.classList.toggle("open");
   }
@@ -105,7 +115,3 @@ function scrollerButtons(){
     alumniTestimonialRow.scrollLeft -= 350;
   })
 }
-
-alumniDataFetchXlsx();
-scrollerButtons();
-alumniReadmorePopupDetails();
