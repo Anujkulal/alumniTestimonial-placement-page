@@ -31,13 +31,13 @@ function alumniDataFetchXlsx(){
        <div class="item">
           <div class="item-inner">
                <h3>${elem.NAME}</h3>
-               <img src="/photo/${elem.PHOTO}" alt="${elem.NAME}">
+               <img src="photo/${elem.PHOTO}" alt="${elem.NAME}">
                <div class="alumni-name">${elem.NAME}</div>
                <p class="detail"><span>Branch: </span> ${elem.BRANCH} </p>
                <p class="detail"><span>Company: </span> ${elem.COMPANY}</p>
                <p class="detail"><span>CTC: </span> ${elem.CTC}</p>
                <div class="read-more-cont">
-                <img src="/photo/${elem.PHOTO}" alt="${elem.NAME}">
+                <img src="photo/${elem.PHOTO}" alt="${elem.NAME}">
                 <div class="alumni-name">${elem.NAME}</div>
                 <p class="detail"><span>Branch: </span> ${elem.BRANCH}</p>
                 <p class="detail"><span>Company: </span> ${elem.COMPANY}</p>
