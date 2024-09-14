@@ -336,10 +336,4 @@
    .alumni-testimonial-popup-box .popup-content{
    	 width: calc(100% - 30px);
 	}
-	
-	/* .alumni-testimonial-popup-box{
-	   overflow-x: hidden;
-	   overflow-y: auto;
-
-   } */
 }
