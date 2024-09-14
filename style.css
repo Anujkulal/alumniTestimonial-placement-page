@@ -1,10 +1,12 @@
+
 *{
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	margin: 0;
 }
  
  body{
- 	font-family: sans-serif;
+	font-family: Arial, sans-serif;
  	margin:0;
  	line-height: 1.5;
 	width: 100%;
@@ -12,14 +14,17 @@
  }
 
  .alumni-testimonial-child-container{
- 	/* max-width: 1170px; */
  	margin: auto;
 	position: relative;
  }
 
  .alumni-testimonial-row{
+ 	display: -webkit-box;
+ 	display: -ms-flexbox;
  	display: flex;
 	overflow-x: scroll;
+	width: 98%;
+	border-radius: 20px;
  }
 
  .alumni-testimonial-row::-webkit-scrollbar{
@@ -27,7 +32,9 @@
  }
 
 .alumni-testimonial-section-title{
-	flex:0 0 100%;
+	-webkit-box-flex:0;
+	    -ms-flex:0 0 100%;
+	        flex:0 0 100%;
 	max-width: 100%;
 	margin-bottom: 60px;
 }
@@ -42,9 +49,14 @@
  }
 
 .alumni-testimonial-container .alumni-testimonial-items{
-	flex:0 0 100%;
 	max-width: 100%;
 	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
 #prev-scroll-btn, #next-scroll-btn{
@@ -57,13 +69,18 @@
 	height: 30px;
 	background-color: #e2e2e2;
 	border-radius: 50%;
-    box-shadow: 0 0 15px rgba(33, 33, 33, 0.5);
+    -webkit-box-shadow: 0 0 15px rgba(33, 33, 33, 0.8);
+            box-shadow: 0 0 15px rgba(33, 33, 33, 0.8);
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
 #prev-scroll-btn:hover, #next-scroll-btn:hover{
 	background-color: #cccccc;
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 #prev-scroll-btn{
@@ -80,12 +97,22 @@
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner{
 	border-radius: 20px;
-	box-shadow: 0 0 15px rgba(122, 120, 120, 0.5);
+	-webkit-box-shadow: 0 0 15px rgba(122, 120, 120, 0.5);
+	        box-shadow: 0 0 15px rgba(122, 120, 120, 0.5);
 	padding: 30px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 300px;
 }
 
@@ -94,11 +121,17 @@
 	height: 120px;
 	background-color: #b6b6b6;
 	border-radius: 50%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner .alumni-name{
-	font-size: 1.1em;
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.alumni-testimonial-container .alumni-testimonial-items .item-inner .detail span{
 	font-weight: 600;
 }
 
@@ -108,7 +141,7 @@
 }
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner h3{
-	font-size: 20px;
+	font-size: 1.4em;
 	color:#000000;
 	margin-bottom: 30px;
 	position: relative;
@@ -137,11 +170,15 @@
 	color:#ffffff;
 	padding: 8px 15px;
 	cursor: pointer;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner .btn:hover{
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .alumni-testimonial-popup-box{
@@ -154,8 +191,11 @@
 	z-index: 500;
 	visibility: hidden;
 	opacity:0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	        backdrop-filter: blur(5px);
 }
 
 .alumni-testimonial-popup-box.open{
@@ -168,7 +208,9 @@
 	position: absolute;
 	left: 50%;
 	top:50%;
-	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
 	border-radius: 20px;
 }
 
@@ -194,22 +236,35 @@
     right: 5px;
     top: 5px;
     cursor: pointer;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 
 .alumni-testimonial-popup-box .popup-header .popup-close-icon:hover{
 	background-color: #ac4e4e91;
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
 .alumni-testimonial-popup-box .popup-body{
 	padding: 15px;
 	max-height: 600px;
 	overflow-y: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 .alumni-testimonial-popup-box .popup-body img{
 	display: block;
@@ -218,12 +273,26 @@
 	height: 120px;
 	background-color: #b6b6b6;
 	border-radius: 50%;
-	object-fit: cover;	
+	-o-object-fit: cover;
+	   object-fit: cover;	
 }
 
 .alumni-testimonial-popup-box .popup-body .alumni-name{
-	font-size: 1.1em;
+	font-size: 1.3em;
 	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+.alumni-testimonial-popup-box .popup-body .detail span{
+	font-weight: 600;
+}
+
+.alumni-testimonial-popup-box .popup-body #description{
+	margin-top: 10px;
+	background-color: #e2e0e0;
+	padding: 8px;
+	border-radius: 10px;
+	text-align: justify;
 }
 
 .alumni-testimonial-popup-box .popup-body p{
@@ -244,6 +313,8 @@
 	font-size: 16px;
 	background-color: #820909;
 	cursor: pointer;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
 	transition: 0.3s;
 }
 .alumni-testimonial-popup-box .popup-footer .btn:focus{
@@ -251,22 +322,14 @@
 }
 
 .alumni-testimonial-popup-box .popup-footer .btn:hover{
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
 }
 
-/*responsive*/
 
 @media(max-width: 767px){
-	.alumni-testimonial-container .alumni-testimonial-items .item{
-	  /* flex:0 0 100%;
-      max-width: 100%; */
-   }
    .alumni-testimonial-popup-box .popup-content{
    	 width: calc(100% - 30px);
    }
 }
-
-
-
-
-
