@@ -4,6 +4,9 @@
 	margin: 0;
 }
  
+.html{
+	font-size: 16px; /* base */
+}
  body{
 	font-family: Arial, sans-serif;
  	margin:0;
@@ -251,7 +254,7 @@
 
 .alumni-testimonial-popup-box .popup-body{
 	padding: 15px;
-	max-height: 600px;
+	/* max-height: 600px; */
 	overflow-y: auto;
 	display: -webkit-box;
 	display: -ms-flexbox;
