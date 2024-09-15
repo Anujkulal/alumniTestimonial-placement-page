@@ -35,7 +35,8 @@
 }
 .alumni-testimonial-section-title h2{
 	text-align: center;
-	font-size: 2rem;
+	/* font-size: 2rem; */
+	font-size: clamp(1.5rem, 4vw, 3rem);
 	color:#800000;
 }
  .alumni-testimonial-container{
@@ -121,7 +122,8 @@
 }
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner .alumni-name{
-	font-size: 1.2em;
+	/* font-size: 1.2em; */
+	font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -136,7 +138,8 @@
 }
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner h3{
-	font-size: 1.4em;
+	/* font-size: 1.4em; */
+	font-size: clamp(1.25rem, 2.5vw, 2rem);
 	color:#000000;
 	margin-bottom: 30px;
 	position: relative;
@@ -154,7 +157,8 @@
 
 .alumni-testimonial-container .alumni-testimonial-items .item-inner p{
 	color:#000000;
-	font-size: 0.9rem;
+	/* font-size: 0.9rem; */
+	font-size: clamp(1rem, 2.5vw, 1.1rem);
 	margin:0 0 3px;
 }
 .alumni-testimonial-container .alumni-testimonial-items .item-inner .btn{
@@ -217,7 +221,8 @@
 .alumni-testimonial-popup-box .popup-header h3{
 	margin:0;
 	color:#800000;
-	font-size: 20px;
+	/* font-size: 20px; */
+	font-size: clamp(1.25rem, 2.5vw, 2rem);
 }
 .alumni-testimonial-popup-box .popup-header .popup-close-icon{
 	position: absolute;
@@ -274,7 +279,8 @@
 }
 
 .alumni-testimonial-popup-box .popup-body .alumni-name{
-	font-size: 20px;
+	/* font-size: 20px; */
+	font-size: clamp(1.2rem, 2.5vw, 1.4rem);
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -292,7 +298,8 @@
 }
 
 .alumni-testimonial-popup-box .popup-body p{
-	font-size: 16px;
+	/* font-size: 16px; */
+	font-size: clamp(1rem, 2.5vw, 1.1rem);
 	color:#000000;
 	margin:0 0 3px;
 }
