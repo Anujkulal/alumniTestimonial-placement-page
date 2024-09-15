@@ -255,7 +255,7 @@
 .alumni-testimonial-popup-box .popup-body{
 	padding: 15px;
 	/* max-height: 600px; */
-	overflow-y: auto;
+	/* overflow-y: auto; */
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
