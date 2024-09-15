@@ -222,7 +222,7 @@
 .alumni-testimonial-popup-box .popup-header h3{
 	margin:0;
 	color:#800000;
-	font-size: 20px;
+	font-size: 1.2rem;
 }
 .alumni-testimonial-popup-box .popup-header .popup-close-icon{
 	position: absolute;
@@ -279,7 +279,7 @@
 }
 
 .alumni-testimonial-popup-box .popup-body .alumni-name{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -297,7 +297,7 @@
 }
 
 .alumni-testimonial-popup-box .popup-body p{
-	font-size: 1rem;
+	font-size: 1em;
 	color:#000000;
 	margin:0 0 3px;
 }
