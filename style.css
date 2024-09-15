@@ -1,7 +1,6 @@
 
 *{
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	margin: 0;
 }
  
@@ -19,8 +18,6 @@
  }
 
  .alumni-testimonial-row{
- 	display: -webkit-box;
- 	display: -ms-flexbox;
  	display: flex;
 	overflow-x: scroll;
 	width: 98%;
@@ -32,9 +29,7 @@
  }
 
 .alumni-testimonial-section-title{
-	-webkit-box-flex:0;
-	    -ms-flex:0 0 100%;
-	        flex:0 0 100%;
+	flex:0 0 100%;
 	max-width: 100%;
 	margin-bottom: 60px;
 }
@@ -222,7 +217,7 @@
 .alumni-testimonial-popup-box .popup-header h3{
 	margin:0;
 	color:#800000;
-	font-size: 1.2rem;
+	font-size: 20px;
 }
 .alumni-testimonial-popup-box .popup-header .popup-close-icon{
 	position: absolute;
@@ -279,7 +274,7 @@
 }
 
 .alumni-testimonial-popup-box .popup-body .alumni-name{
-	font-size: 1.2em;
+	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -297,7 +292,7 @@
 }
 
 .alumni-testimonial-popup-box .popup-body p{
-	font-size: 1em;
+	font-size: 16px;
 	color:#000000;
 	margin:0 0 3px;
 }
